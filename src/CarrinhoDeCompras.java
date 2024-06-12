@@ -1,14 +1,19 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class CarrinhoDeCompras {
     private List<Produto> itens;
+    private Scanner scanner;
+    private static final DecimalFormat df = new DecimalFormat("0.00");
 
     public CarrinhoDeCompras() {
         this.itens = new ArrayList<>();
+        this.scanner = new Scanner(System.in);
     }
 
     public void adicionarItem(Produto produto) {
@@ -39,44 +44,15 @@ public class CarrinhoDeCompras {
 
     public void gerarArquivoTexto(String nomeArquivo) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(nomeArquivo))) {
+            writer.write("item: Qtd: Nome: Preço: SubTotal:\n");
             int itemNumber = 1;
             for (Produto item : itens) {
+                double subTotal = item.getPreco() * item.getQuantidade();
                 writer.write(itemNumber + " " + item.getQuantidade() + " " + item.getNome() + " " +
-                        item.getPreco() + " " + (item.getPreco() * item.getQuantidade()) + "\n");
+                        df.format(item.getPreco()) + " " + df.format(subTotal) + "\n");
                 itemNumber++;
             }
-            writer.write("Total: " + calcularTotal());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-   
-    public void adicionarProduto(Produto produto) {
-        itens.add(produto);
-    }
-
-   
-    public void removerProduto(Produto produto) {
-        itens.remove(produto);
-    }
-
-   
-    public void listarProdutos() {
-        System.out.println("Produtos no carrinho:");
-        for (Produto produto : itens) {
-            System.out.println(produto.exibirDetalhes());
-        }
-    }
-
-
-    public void emitirRelatorio(String nomeArquivo) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(nomeArquivo))) {
-            writer.write("Lista de Produtos no Carrinho:\n\n");
-            for (Produto produto : itens) {
-                writer.write(produto.exibirDetalhes() + "\n");
-            }
-            writer.write("\nTotal: " + calcularTotal());
+            writer.write("Total: " + df.format(calcularTotal()));
         } catch (IOException e) {
             e.printStackTrace();
         }
