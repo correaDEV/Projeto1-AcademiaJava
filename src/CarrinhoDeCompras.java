@@ -51,17 +51,17 @@ public class CarrinhoDeCompras {
         }
     }
 
-    // Método para adicionar um produto ao carrinho
+   
     public void adicionarProduto(Produto produto) {
         itens.add(produto);
     }
 
-    // Método para remover um produto do carrinho
+   
     public void removerProduto(Produto produto) {
         itens.remove(produto);
     }
 
-    // Método para listar todos os produtos no carrinho
+   
     public void listarProdutos() {
         System.out.println("Produtos no carrinho:");
         for (Produto produto : itens) {
@@ -69,7 +69,7 @@ public class CarrinhoDeCompras {
         }
     }
 
-    // Método para emitir um relatório em arquivo de texto
+
     public void emitirRelatorio(String nomeArquivo) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(nomeArquivo))) {
             writer.write("Lista de Produtos no Carrinho:\n\n");
