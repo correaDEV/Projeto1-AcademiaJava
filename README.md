@@ -1,4 +1,4 @@
-# Projeto1-AcademiaJava
+# 💻 Projeto1-AcademiaJava
 <hr>
 <h2>Objetivo</h2>
     <p>Implementar um sistema de vendas de produtos utilizando conceitos de programação orientada a objetos: métodos, encapsulamento, construtores, herança, interfaces, classes abstratas e tratamento de exceções.</p>
