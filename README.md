@@ -9,7 +9,7 @@
   <h2>Estrutura do Projeto</h2>
 
  <h3>1. Interface Produto</h3>
-<p>Define os métodos a serem implementados pelas classes de produtos.</p>
+<p>Define os métodos a serem implementados pelas classes de produtos.</p> 
  <ul>
         <li><code>public String getTipo()</code></li>
         <li><code>public String getNome()</code></li>
