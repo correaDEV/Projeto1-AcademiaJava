@@ -2,7 +2,7 @@
 <hr>
 <h2>Objetivo</h2>
     <p>Implementar um sistema de vendas de produtos utilizando conceitos de programação orientada a objetos: métodos, encapsulamento, construtores, herança, interfaces, classes abstratas e tratamento de exceções.</p>
- 
+  
    <h2>Descrição</h2>
     <p>Este projeto consiste na criação de um sistema para gerenciar diferentes tipos de produtos, incluindo eletrônicos, roupas e alimentos. O sistema permitirá a adição, remoção e listagem de produtos, bem como a emissão de relatórios em arquivo de texto contendo detalhes específicos para cada tipo de produto.</p> 
 
